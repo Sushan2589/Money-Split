@@ -17,10 +17,16 @@ body {
     padding: 20px;
 }
 
-header {
+header,
+.section-header,
+.expense-heading {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: 15px;
+}
+
+header {
     margin-bottom: 40px;
 }
 
@@ -31,15 +37,20 @@ header h1 {
 header p,
 .section-header p,
 .balance-card p,
-.empty-state p {
-    color: #999999;
+.empty-state p,
+.expense-card p {
+    color: #999;
     font-size: 14px;
     margin-top: 6px;
 }
 
-.currency {
-    color: #cccccc;
-    font-size: 14px;
+header select,
+input,
+select {
+    background: #222;
+    color: #eee;
+    border: 1px solid #444;
+    padding: 10px;
 }
 
 .balances {
@@ -62,9 +73,6 @@ header p,
 }
 
 .section-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
     margin-bottom: 25px;
 }
 
@@ -73,21 +81,84 @@ header p,
 }
 
 button {
-    background: #eeeeee;
+    background: #eee;
     color: #171717;
     border: none;
     padding: 10px 14px;
     cursor: pointer;
 }
 
+#friendForm,
+#expenseForm {
+    margin: 25px 0;
+}
+
+#friendForm input,
+#expenseForm input,
+#expenseForm select {
+    display: block;
+    width: 100%;
+    margin: 12px 0;
+}
+
+#friendForm label,
+#expenseForm label,
+#expenseForm p {
+    display: block;
+    margin: 15px 0 8px;
+    font-size: 14px;
+}
+
+#participants {
+    margin: 12px 0;
+}
+
+#participants label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 10px 0;
+}
+
+#participants input {
+    width: auto;
+    margin: 0;
+}
+
+.share-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    margin: 12px 0;
+}
+
+.share-row input {
+    max-width: 130px;
+}
+
+.expense-card {
+    padding: 18px 0;
+    border-bottom: 1px solid #333;
+    cursor: pointer;
+}
+
+.expense-heading {
+    margin-bottom: 8px;
+}
+
+.expense-card p {
+    margin-top: 8px;
+}
+
 .empty-state {
-    color: #999999;
+    color: #999;
     padding: 35px 0;
     text-align: center;
 }
 
 .empty-state h3 {
-    color: #eeeeee;
+    color: #eee;
     font-size: 16px;
     margin-bottom: 8px;
 }
@@ -97,6 +168,11 @@ button {
         margin: 20px auto;
     }
 
+    header {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
     .balances {
         gap: 25px;
         flex-wrap: wrap;
@@ -104,7 +180,6 @@ button {
 
     .section-header {
         align-items: flex-start;
-        gap: 15px;
         flex-direction: column;
     }
 }

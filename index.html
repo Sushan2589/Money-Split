@@ -8,16 +8,19 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
     <div class="container">
-
         <header>
             <div>
                 <h1>PaisaSplit</h1>
                 <p>Split expenses. Keep things simple.</p>
             </div>
 
-            <span class="currency">NPR Rs.</span>
+            <div>
+                <label for="currentUser">You are:</label>
+                <select id="currentUser">
+                    <option value="">Select yourself</option>
+                </select>
+            </div>
         </header>
 
         <main>
@@ -40,7 +43,72 @@
                         <p>Your shared spending activity</p>
                     </div>
 
-                    <button id="addExpense">+ Add expense</button>
+                    <div>
+                        <button id="addFriend">+ Add friend</button>
+                        <button id="addExpense">+ Add expense</button>
+                    </div>
+                </div>
+
+                <div id="friendForm" hidden>
+                    <h3>Add friend</h3>
+
+                    <form id="friendFormElement">
+                        <input
+                            type="text"
+                            id="friendName"
+                            placeholder="Friend's name"
+                            required
+                        >
+
+                        <button type="submit">Add friend</button>
+                        <button type="button" id="cancelFriend">Cancel</button>
+                    </form>
+                </div>
+
+                <div id="expenseForm" hidden>
+                    <h3>Add expense</h3>
+
+                    <form id="expenseFormElement">
+                        <input
+                            type="text"
+                            id="expenseTitle"
+                            placeholder="Expense name"
+                            required
+                        >
+
+                        <input
+                            type="number"
+                            id="expenseAmount"
+                            placeholder="Total amount (NPR)"
+                            min="0.01"
+                            step="0.01"
+                            required
+                        >
+
+                        <label for="expensePayer">Who paid?</label>
+                        <select id="expensePayer" required>
+                            <option value="">Select payer</option>
+                        </select>
+
+                        <p>Who participated?</p>
+                        <div id="participants"></div>
+
+                        <p>Individual shares (optional)</p>
+                        <div id="customShares"></div>
+
+                        <p id="shareTotal">Manually allocated: Rs. 0.00</p>
+
+                        <button type="button" id="splitExpense">Split expense</button>
+
+                        <div id="splitResult" hidden>
+                            <h3>Split breakdown</h3>
+                            <div id="splitDetails"></div>
+                            <p id="splitTotal"></p>
+                            <button type="submit">Save expense</button>
+                        </div>
+
+                        <button type="button" id="cancelExpense">Cancel</button>
+                    </form>
                 </div>
 
                 <div id="expenseList" class="expense-list">
@@ -51,7 +119,6 @@
                 </div>
             </section>
         </main>
-
     </div>
 
     <script src="script.js"></script>
