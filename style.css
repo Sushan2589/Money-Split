@@ -1,0 +1,110 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #171717;
+    color: #eeeeee;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    max-width: 850px;
+    margin: 50px auto;
+    padding: 20px;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+header h1 {
+    font-size: 26px;
+}
+
+header p,
+.section-header p,
+.balance-card p,
+.empty-state p {
+    color: #999999;
+    font-size: 14px;
+    margin-top: 6px;
+}
+
+.currency {
+    color: #cccccc;
+    font-size: 14px;
+}
+
+.balances {
+    display: flex;
+    gap: 50px;
+    margin-bottom: 45px;
+}
+
+.balance-card h2 {
+    font-size: 24px;
+    margin-top: 10px;
+}
+
+.positive {
+    color: #4ade80;
+}
+
+.negative {
+    color: #f87171;
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.section-header h2 {
+    font-size: 19px;
+}
+
+button {
+    background: #eeeeee;
+    color: #171717;
+    border: none;
+    padding: 10px 14px;
+    cursor: pointer;
+}
+
+.empty-state {
+    color: #999999;
+    padding: 35px 0;
+    text-align: center;
+}
+
+.empty-state h3 {
+    color: #eeeeee;
+    font-size: 16px;
+    margin-bottom: 8px;
+}
+
+@media (max-width: 600px) {
+    .container {
+        margin: 20px auto;
+    }
+
+    .balances {
+        gap: 25px;
+        flex-wrap: wrap;
+    }
+
+    .section-header {
+        align-items: flex-start;
+        gap: 15px;
+        flex-direction: column;
+    }
+}

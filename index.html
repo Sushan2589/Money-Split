@@ -9,7 +9,50 @@
 </head>
 <body>
 
-    
+    <div class="container">
+
+        <header>
+            <div>
+                <h1>PaisaSplit</h1>
+                <p>Split expenses. Keep things simple.</p>
+            </div>
+
+            <span class="currency">NPR Rs.</span>
+        </header>
+
+        <main>
+            <section class="balances">
+                <div class="balance-card">
+                    <p>You are owed</p>
+                    <h2 class="positive" id="owed">Rs. 0.00</h2>
+                </div>
+
+                <div class="balance-card">
+                    <p>You owe</p>
+                    <h2 class="negative" id="owe">Rs. 0.00</h2>
+                </div>
+            </section>
+
+            <section class="expenses-section">
+                <div class="section-header">
+                    <div>
+                        <h2>Recent expenses</h2>
+                        <p>Your shared spending activity</p>
+                    </div>
+
+                    <button id="addExpense">+ Add expense</button>
+                </div>
+
+                <div id="expenseList" class="expense-list">
+                    <div class="empty-state">
+                        <h3>No expenses yet</h3>
+                        <p>Add your first expense to get started.</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+    </div>
 
     <script src="script.js"></script>
 </body>
